@@ -1,6 +1,5 @@
 {
   "name": "gridsome-blog",
-  "private": true,
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -13,7 +12,6 @@
     "gridsome": "^0.7.17",
     "gridsome-plugin-flexsearch": "^1.0.1",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",
-    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
     "hooper": "^0.3.4",
     "medium-zoom": "^1.0.5",
     "minimist": "^1.2.5",
