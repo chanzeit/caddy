@@ -2,7 +2,7 @@ FROM node:alpine AS builder
 RUN mkdir -p /app
 WORKDIR /app
 COPY . .
-RUN npm install && gridsome build
+RUN npm install
 
 FROM nginx:alpine
 COPY --from=builder /app /usr/share/nginx/html/
