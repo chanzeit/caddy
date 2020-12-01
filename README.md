@@ -24,3 +24,7 @@ caddyserver/ntlm-transport \
 abiosoft/hmac \
 lolPants/caddy-requestid \
 mholt/caddy-webdav
+
+### Please find LICENSE link for caddy below 
+
+https://github.com/caddyserver/caddy/blob/master/LICENSE
