@@ -2,6 +2,8 @@
 
 Caddy Docker Container with custom packages
 
+I took the base caddy docker image; added below packages and built custom caddy docker container 
+
 # Packages included
 
 ## DNS
