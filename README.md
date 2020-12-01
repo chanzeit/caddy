@@ -1,10 +1,10 @@
 # Caddy Docker Custom Image
 
-Caddy Docker Container with custom packages
+Caddy Docker Container with custom modules
 
-I took the base caddy docker image; added below packages and built custom caddy docker container 
+I took the base caddy docker image; added below custom modules and built custom caddy docker container 
 
-# Packages included
+# Modules Included
 
 ## DNS
 
