@@ -1,4 +1,4 @@
-FROM caddy:2.3-builder AS builder
+FROM caddy:2.3.0-rc.1-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -15,6 +15,6 @@ RUN xcaddy build \
     --with github.com/mholt/caddy-webdav \
     --with github.com/abiosoft/caddy-json-parse
 
-FROM caddy:2.3
+FROM caddy:2.3.0-rc.1
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
