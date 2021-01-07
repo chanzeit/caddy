@@ -48,11 +48,11 @@ services:
       - caddy
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - /mnt/caddysite-1:/etc/caddy/html/discuss.rajasekhar.rocks
-      - /mnt/caddysite-2:/etc/caddy/html/jaeger.rajasekhar.rocks
       - /mnt/caddydata:/data
       - /mnt/caddyconfig:/config
       - /mnt/caddylogs:/var/log/caddy
+      - /mnt/caddysite-1:/etc/caddy/html/site-1
+      - /mnt/caddysite-2:/etc/caddy/html/site-2
     environment:
       ACME_AGREE: 'true'
     deploy:
@@ -67,17 +67,15 @@ services:
         condition: on-failure
 
 volumes:
-  caddysite:
-    driver: "local"
-  caddysite-1:
-    driver: "local"
-  caddysite-2:
-    driver: "local"
   caddydata:
     driver: "local"
   caddyconfig:
     driver: "local"
   caddylogs:
+    driver: "local"
+  caddysite-1:
+    driver: "local"
+  caddysite-2:
     driver: "local"
 networks:
   caddy:
