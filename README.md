@@ -41,7 +41,6 @@ version: "3.7"
 services:
   caddy:
     image: rajaseg/caddy
-#rajaseg/caddy
     ports:
       - "80:80"
       - "443:443"
