@@ -1,7 +1,7 @@
 FROM caddy:2.3.0-builder-alpine AS builder
 
-COPY Caddyfile /etc/caddy/Caddyfile
-COPY site /srv
+#COPY Caddyfile /etc/caddy/Caddyfile
+#COPY site /srv
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
