@@ -5,8 +5,8 @@ FROM caddy:2.4.2-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
-    --with github.com/greenpau/caddy-auth-jwt@latest \
-    --with github.com/greenpau/caddy-auth-portal@latest \
+    --with github.com/greenpau/caddy-auth-jwt \
+    --with github.com/greenpau/caddy-auth-portal \
     --with github.com/greenpau/caddy-trace \
     --with github.com/caddyserver/ntlm-transport \
     --with github.com/abiosoft/caddy-hmac \
