@@ -1,7 +1,4 @@
-FROM caddy:2.4.2-builder-alpine AS builder
-
-#COPY Caddyfile /etc/caddy/Caddyfile
-#COPY site /srv
+FROM caddy:2.4.3-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -26,6 +23,6 @@ RUN xcaddy build \
     --with github.com/nicolasazrak/caddy-cache \
     --with github.com/abiosoft/caddy-json-parse
 
-FROM caddy:2.4.2-alpine
+FROM caddy:2.4.3-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
