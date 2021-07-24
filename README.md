@@ -53,8 +53,6 @@ services:
       - /mnt/caddylogs:/var/log/caddy
       - /mnt/caddysite-1:/etc/caddy/html/site-1
       - /mnt/caddysite-2:/etc/caddy/html/site-2
-    environment:
-      ACME_AGREE: 'true'
     deploy:
       placement:
         constraints:
