@@ -2,7 +2,7 @@ kind: pipeline
 type: docker
 name: default
 steps:
-- name: docker-build  
+- name: docker-build-publish  
   image: plugins/docker
   volumes:
   - name: dockersock
