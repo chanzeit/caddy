@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+#type: docker
 name: default
 steps:
 - name: docker-build  
