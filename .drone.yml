@@ -1,0 +1,38 @@
+kind: pipeline
+type: docker
+name: default
+steps:
+- name: docker-build  
+  image: plugins/docker
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: tuneitme/caddy-drone
+    dockerfile: Dockerfile
+    auto_tag: true
+- name: drone-email
+  image: drillster/drone-email
+  settings:
+    host:
+      from_secret: mail_host
+    username:
+      from_secret: mail_user
+    password:
+      from_secret: mail_password
+    from:
+      from_secret: mail_from
+    recipients:
+      from_secret: mail_receipt
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
+when:
+  event: push
+  branch: [master]
+  status: [changed, failure]
