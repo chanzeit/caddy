@@ -5,7 +5,6 @@ RUN xcaddy build \
     --with github.com/greenpau/caddy-auth-jwt \
     --with github.com/greenpau/caddy-auth-portal \
     --with github.com/greenpau/caddy-trace \
-    --with github.com/caddyserver/ntlm-transport \
     --with github.com/abiosoft/caddy-hmac \
     --with github.com/caddy-dns/dnspod \
     --with github.com/caddy-dns/gandi \
@@ -20,7 +19,7 @@ RUN xcaddy build \
     --with github.com/caddy-dns/vultr \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
-    --with github.com/nicolasazrak/caddy-cache \
+#    --with github.com/nicolasazrak/caddy-cache \
     --with github.com/abiosoft/caddy-json-parse
 
 FROM caddy:2.4.3-alpine
