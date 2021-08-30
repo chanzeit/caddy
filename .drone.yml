@@ -12,7 +12,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: rajaseg/caddy-drone
+    repo: rajaseg/caddy
     dockerfile: Dockerfile
     auto_tag: true
 - name: drone-email
