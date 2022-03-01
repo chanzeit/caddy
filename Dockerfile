@@ -19,7 +19,8 @@ RUN xcaddy build \
     --with github.com/caddy-dns/vultr \
     --with github.com/lolPants/caddy-requestid \
     --with github.com/mholt/caddy-webdav \
-#    --with github.com/nicolasazrak/caddy-cache \
+    --with github.com/firecow/caddy-forward-auth \
+    --with github.com/hslatman/caddy-crowdsec-bouncer \
     --with github.com/abiosoft/caddy-json-parse
 
 FROM caddy:2.4.6-alpine
