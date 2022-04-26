@@ -1,7 +1,21 @@
 kind: pipeline
 type: docker
-name: default
+name: Caddy Docker Container
+
 steps:
+- name: restore-cache-with-filesystem
+  image: meltwater/drone-cache:v1.1.0-rc1
+  pull: always
+  settings:
+    archive_format: gzip
+    backend: filesystem
+    cache_key: volume
+    restore: true
+    exit_code: true
+  volumes:
+    - name: cache
+      path: /tmp/cache
+
 - name: docker-build-publish  
   image: plugins/docker
   volumes:
@@ -15,6 +29,20 @@ steps:
     repo: rajaseg/caddy
     dockerfile: Dockerfile
     auto_tag: true
+
+- name: rebuild-cache-with-filesystem
+  image: meltwater/drone-cache:v1.1.0-rc1
+  pull: always
+  settings:
+    archive_format: gzip
+    backend: filesystem
+    cache_key: volume
+    rebuild: true
+    exit_code: true
+  volumes:
+    - name: cache
+      path: /tmp/cache
+
 - name: drone-email
   image: drillster/drone-email
   settings:
@@ -28,10 +56,19 @@ steps:
       from_secret: mail_from
     recipients:
       from_secret: mail_receipt
+
+- name: scan
+  image: quay.io/sighup/trivy-offline:latest
+  pull: always
+  commands:
+    - trivy image --skip-update python:3.4-alpine
+      
 volumes:
 - name: dockersock
   host:
     path: /var/run/docker.sock
+- name: cache
+  temp: {}
 when:
   event: push
   branch: [master]
