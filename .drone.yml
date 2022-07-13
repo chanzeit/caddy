@@ -43,19 +43,19 @@ steps:
     - name: cache
       path: /tmp/cache
 
-- name: drone-email
-  image: drillster/drone-email
-  settings:
-    host:
-      from_secret: mail_host
-    username:
-      from_secret: mail_user
-    password:
-      from_secret: mail_password
-    from:
-      from_secret: mail_from
-    recipients:
-      from_secret: mail_receipt
+#- name: drone-email
+#  image: drillster/drone-email
+#  settings:
+#    host:
+#      from_secret: mail_host
+#    username:
+#      from_secret: mail_user
+#    password:
+#      from_secret: mail_password
+#    from:
+#      from_secret: mail_from
+#    recipients:
+#      from_secret: mail_receipt
 
 - name: scan
   image: quay.io/sighup/trivy-offline:latest
