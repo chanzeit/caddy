@@ -1,4 +1,4 @@
-FROM caddy:2.5.2-builder-alpine AS builder
+FROM caddy:2.6.0-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -22,6 +22,6 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer \
     --with github.com/abiosoft/caddy-json-parse
 
-FROM caddy:2.5.2-alpine
+FROM caddy:2.6.0-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
