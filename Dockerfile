@@ -21,7 +21,7 @@ RUN xcaddy build \
     --with github.com/mholt/caddy-webdav \
     --with github.com/hslatman/caddy-crowdsec-bouncer \
     --with github.com/abiosoft/caddy-json-parse \
-    --with https://github.com/porech/caddy-maxmind-geolocation
+    --with github.com/porech/caddy-maxmind-geolocation
 
 FROM caddy:2.6.2-alpine
 
