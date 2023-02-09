@@ -2,7 +2,7 @@ FROM caddy:2.6.3-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
-#    --with github.com/greenpau/caddy-trace \
+    --with github.com/greenpau/caddy-trace \
     --with github.com/abiosoft/caddy-hmac \
     --with github.com/caddy-dns/dnspod \
     --with github.com/caddy-dns/gandi \
