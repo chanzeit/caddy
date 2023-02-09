@@ -34,7 +34,7 @@ steps:
     auto_tag: true
     
 - name: megalinter
-  image: oxsecurity/megalinter:v6
+  image: oxsecurity/megalinter
   environment:
     DEFAULT_WORKSPACE: /tmp/lint
     
