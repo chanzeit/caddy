@@ -18,7 +18,8 @@ RUN xcaddy build \
     --with github.com/mholt/caddy-webdav \
     --with github.com/abiosoft/caddy-json-parse \
     --with github.com/hslatman/caddy-crowdsec-bouncer \    
-    --with github.com/porech/caddy-maxmind-geolocation
+    --with github.com/porech/caddy-maxmind-geolocation \
+    --with github.com/WeidiDeng/caddy-cloudflare-ip
 
 FROM caddy:2.6.3-alpine
 
