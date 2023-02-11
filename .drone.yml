@@ -69,7 +69,7 @@ steps:
   image: quay.io/sighup/trivy-offline:latest
   pull: always
   commands:
-    - trivy image --skip-update python:3.4-alpine
+    - trivy image --skip-db-update python:3.4-alpine
       
 volumes:
 - name: dockersock
