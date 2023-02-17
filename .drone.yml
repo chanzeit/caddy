@@ -2,9 +2,6 @@ kind: pipeline
 type: docker
 name: Caddy Docker Container
 
-#workspace:
-#  path: /tmp/lint
-
 steps:
 - name: restore-cache-with-filesystem
   image: meltwater/drone-cache:v1.1.0-rc1
@@ -32,11 +29,6 @@ steps:
     repo: rajaseg/caddy
     dockerfile: Dockerfile
     auto_tag: true
-    
-#- name: megalinter
-#  image: oxsecurity/megalinter
-#  environment:
-#    DEFAULT_WORKSPACE: /tmp/lint
     
 - name: rebuild-cache-with-filesystem
   image: meltwater/drone-cache:v1.1.0-rc1
