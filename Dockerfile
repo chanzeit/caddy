@@ -1,4 +1,4 @@
-FROM caddy:2.6.3-builder-alpine AS builder
+FROM caddy:2.6.4-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -21,6 +21,6 @@ RUN xcaddy build \
     --with github.com/porech/caddy-maxmind-geolocation \
     --with github.com/WeidiDeng/caddy-cloudflare-ip
 
-FROM caddy:2.6.3-alpine
+FROM caddy:2.6.4-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
