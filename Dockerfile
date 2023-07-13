@@ -20,8 +20,8 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer \    
     --with github.com/porech/caddy-maxmind-geolocation \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
-    --with github.com/corazawaf/coraza-caddy
-
+    --with github.com/corazawaf/coraza-caddy/v2
+    
 FROM caddy:2.6.4-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
