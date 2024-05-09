@@ -5,7 +5,6 @@ RUN xcaddy build \
     --with github.com/abiosoft/caddy-hmac \
     --with github.com/caddy-dns/dnspod \
     --with github.com/caddy-dns/gandi \
-    --with github.com/caddy-dns/lego-deprecated \
     --with github.com/caddy-dns/route53 \
     --with github.com/caddy-dns/alidns \
     --with github.com/caddy-dns/azure \
@@ -20,6 +19,7 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer \    
     --with github.com/porech/caddy-maxmind-geolocation \
     --with github.com/WeidiDeng/caddy-cloudflare-ip \
+    --with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/corazawaf/coraza-caddy/v2
     
 FROM caddy:2.8-alpine
