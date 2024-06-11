@@ -1,4 +1,4 @@
-FROM caddy:2.8-builder-alpine AS builder
+FROM caddy:2.8.4-builder-alpine AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -22,6 +22,6 @@ RUN xcaddy build \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/corazawaf/coraza-caddy/v2
     
-FROM caddy:2.8-alpine
+FROM caddy:2.8.4-alpine
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
