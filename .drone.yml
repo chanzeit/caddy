@@ -44,7 +44,8 @@ steps:
       path: /tmp/cache
       
 - name: scan
-  image: quay.io/sighup/trivy-offline:latest
+  image: aquasecurity/trivy-action@0.31.0
+  #quay.io/sighup/trivy-offline:latest
   pull: always
   commands:
     - trivy image --skip-db-update python:3.4-alpine
