@@ -43,12 +43,24 @@ steps:
     - name: cache
       path: /tmp/cache
       
+#- name: scan
+#  image: aquasecurity/trivy-action@0.31.0
+#  #quay.io/sighup/trivy-offline:latest
+#  pull: always
+#  commands:
+#    - trivy image --skip-db-update python:3.4-alpine
+    
 - name: scan
-  image: aquasecurity/trivy-action@0.31.0
-  #quay.io/sighup/trivy-offline:latest
-  pull: always
-  commands:
-    - trivy image --skip-db-update python:3.4-alpine
+  image: drone-plugins/drone-snyk
+#  pull: if-not-exists
+  privileged: true
+  settings:
+      dockerfile: Dockerfile
+      image: rajaseg/caddy
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
       
 volumes:
 - name: dockersock
