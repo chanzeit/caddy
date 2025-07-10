@@ -50,17 +50,17 @@ steps:
 #  commands:
 #    - trivy image --skip-db-update python:3.4-alpine
     
-- name: scan
-  image: drone-plugins/drone-snyk
+#- name: scan
+#  image: drone-plugins/drone-snyk
 #  pull: if-not-exists
-  privileged: true
-  settings:
-      dockerfile: Dockerfile
-      image: rajaseg/caddy
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
+#  privileged: true
+#  settings:
+#      dockerfile: Dockerfile
+#      image: rajaseg/caddy
+#      username:
+#        from_secret: docker_username
+#      password:
+#        from_secret: docker_password
       
 volumes:
 - name: dockersock
