@@ -5,7 +5,7 @@ RUN xcaddy build \
     --with github.com/abiosoft/caddy-hmac \
 #    --with github.com/caddy-dns/dnspod \
 #    --with github.com/caddy-dns/gandi \
-#    --with github.com/caddy-dns/route53 \
+    --with github.com/caddy-dns/route53 \
 #    --with github.com/caddy-dns/alidns \
 #    --with github.com/caddy-dns/azure \
 #    --with github.com/caddy-dns/digitalocean \
